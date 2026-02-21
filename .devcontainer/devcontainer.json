@@ -14,7 +14,7 @@
     },
 
     // Installs requirements automatically after the container starts
-    "postCreateCommand": "pip install --user -r requirements.txt",
+    "postCreateCommand": "pip install conda",
 
     // Keeps files owned by the non-root user 'vscode'
     "remoteUser": "vscode"
