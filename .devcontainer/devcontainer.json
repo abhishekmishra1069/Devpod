@@ -1,0 +1,21 @@
+{
+    "name": "Ubuntu-Podman-Python",
+    // Uses a pre-built Microsoft image with Python 3.12 installed
+    "image": "mcr.microsoft.com/devcontainers/python:3.12",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",        // Official Python extension
+                "ms-python.vscode-pylance", // Language server for type checking
+                "njpwerner.autodocstring"   // Quickly generate docstrings
+            ]
+        }
+    },
+
+    // Installs requirements automatically after the container starts
+    "postCreateCommand": "pip install --user -r requirements.txt",
+
+    // Keeps files owned by the non-root user 'vscode'
+    "remoteUser": "vscode"
+}
