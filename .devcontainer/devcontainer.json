@@ -17,5 +17,5 @@
     "postCreateCommand": "pip install conda",
 
     // Keeps files owned by the non-root user 'vscode'
-    "remoteUser": "vscode"
+    "remoteUser": "ubuntu"
 }
