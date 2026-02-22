@@ -1,25 +1,19 @@
 {
     "name": "Ubuntu-Podman-Python",
-    // Uses a pre-built Microsoft image with Python 3.12 installed
     "image": "ghcr.io/abhishekmishra1069/devpod/python-contianer:1.0",
-
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-python.python",        // Official Python extension
-                "ms-python.vscode-pylance", // Language server for type checking
-                "njpwerner.autodocstring"   // Quickly generate docstrings
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "njpwerner.autodocstring"
             ]
         }
     },
-
-    // Installs requirements automatically after the container starts
-    // "postCreateCommand": "pip install --user -r requirements.txt",
-
-    // Keeps files owned by the non-root user 'vscode'
     "remoteUser": "root",
     "containerUser": "root",
-    "updateRemoteUserUID": false, // This stops the crash you're seeing
-    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/Devpod,type=bind,Z"
-    
+    "updateRemoteUserUID": false,
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/Devpod,type=bind,Z",
+    // Force DevPod to use the image we manually pulled to the VM
+    "onCreateCommand": "echo 'Image ready'"
 }
