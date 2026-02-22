@@ -17,6 +17,9 @@
     // "postCreateCommand": "pip install --user -r requirements.txt",
 
     // Keeps files owned by the non-root user 'vscode'
-    "remoteUser": "ubuntu"
+    "remoteUser": "root",
+    "containerUser": "root",
+    "updateRemoteUserUID": false, // This stops the crash you're seeing
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/Devpod,type=bind,Z"
     
 }
